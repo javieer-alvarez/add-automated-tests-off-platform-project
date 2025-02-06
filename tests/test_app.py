@@ -25,7 +25,7 @@ def test_withdraw_1(app, client):
     del app
     res = client.get('/withdraw?amount=1000')
     assert res.status_code == 200
-    expected = {'balance': 800}
+    expected = {'balance': 800
     assert expected == json.loads(res.get_data(as_text=True))
 
 def test_withdraw_2(app, client):
